@@ -61,7 +61,7 @@ Result: a tamper-proof, on-chain record that an agent passed formal governance v
 - [x] **DOFProofRegistryV1** — [`0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83`](https://evmtestnet.confluxscan.io/address/0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83) — 38+ proofs, production-proven.
 - [x] **DOFProofRegistryV2 (Proof-to-Gasless)** — [`0x8B6BfF194641dfB067e7d9FDF4fb8A91A70Bb8D6`](https://evmtestnet.confluxscan.io/address/0x8B6BfF194641dfB067e7d9FDF4fb8A91A70Bb8D6) — deployed Apr 9, 2026. Agents with TRACER≥0.4 + Constitution≥0.9 are automatically added to `SponsorWhitelistControl`. **Math earns gas-free transactions.**
 - [x] **Gas Sponsorship** — `SponsorWhitelistControl` at `0x0888000000000000000000000000000000000001`. Zero-gas compliance registration for qualifying agents.
-- [x] **Conflux MCP Server** — First Model Context Protocol server for Conflux. Any LLM (Claude, GPT, Cursor) connects to on-chain governance via 5 tools.
+- [x] **Conflux MCP Server** — First Model Context Protocol server for Conflux. Any LLM (Claude, GPT, Cursor) connects to on-chain governance via 6 tools (all fully operational): `verify_agent_compliance`, `register_proof_on_chain`, `check_gasless_status`, `get_proof_history`, `get_network_stats`, `analyze_defi_compliance`.
 
 ## 🎬 Demo
 
