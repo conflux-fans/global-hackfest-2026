@@ -58,23 +58,26 @@ Result: a tamper-proof, on-chain record that an agent passed formal governance v
 
 ## ⚡ Conflux Integration
 
-- [x] **eSpace** — DOFProofRegistry deployed at [`0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83`](https://evmtestnet.confluxscan.io/address/0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83) on Conflux eSpace Testnet (chain ID 71). 38+ proofs registered.
-- [x] **Gas Sponsorship** — `SponsorWhitelistControl` at `0x0888000000000000000000000000000000000001` integrated. Agents pay zero gas to register compliance proofs.
-- [x] **Built-in Contracts** — Gas Sponsorship for agent proof registration
+- [x] **DOFProofRegistryV1** — [`0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83`](https://evmtestnet.confluxscan.io/address/0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83) — 38+ proofs, production-proven.
+- [x] **DOFProofRegistryV2 (Proof-to-Gasless)** — [`0x8B6BfF194641dfB067e7d9FDF4fb8A91A70Bb8D6`](https://evmtestnet.confluxscan.io/address/0x8B6BfF194641dfB067e7d9FDF4fb8A91A70Bb8D6) — deployed Apr 9, 2026. Agents with TRACER≥0.4 + Constitution≥0.9 are automatically added to `SponsorWhitelistControl`. **Math earns gas-free transactions.**
+- [x] **Gas Sponsorship** — `SponsorWhitelistControl` at `0x0888000000000000000000000000000000000001`. Zero-gas compliance registration for qualifying agents.
+- [x] **Conflux MCP Server** — First Model Context Protocol server for Conflux. Any LLM (Claude, GPT, Cursor) connects to on-chain governance via 5 tools.
 
 ## 🎬 Demo
 
 - **Video**: [https://youtu.be/WwpqXdYYID8](https://youtu.be/WwpqXdYYID8) (104 seconds)
 - **Docs**: [https://dofmesh.com](https://dofmesh.com)
-- **GitHub**: [github.com/Cyberpaisa/DOF-MESH](https://github.com/Cyberpaisa/DOF-MESH)
-- **Contract**: [ConfluxScan](https://evmtestnet.confluxscan.io/address/0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83)
+- **GitHub**: [github.com/Cyberpaisa/DOF-MESH](https://github.com/Cyberpaisa/DOF-MESH/tree/conflux-hackathon)
+- **Contract V2**: [ConfluxScan](https://evmtestnet.confluxscan.io/address/0x8B6BfF194641dfB067e7d9FDF4fb8A91A70Bb8D6)
 
 ### Verified Transactions on Conflux
 
 | Date | TX Hash | What it proves |
 |------|---------|----------------|
-| Apr 6, 2026 | [`bf98ea58...bebf740c`](https://evmtestnet.confluxscan.io/tx/bf98ea58265dcd8433f594376d0d679fde65d93ae8cc18d841627308bebf740c) | Full 6-step governance cycle — Agent #1687 |
-| Apr 6, 2026 | [`77d4ddea...b12465e5`](https://evmtestnet.confluxscan.io/tx/77d4ddea0043bf6df5a916cd7040886e0a97480ab12465e5842ce7c2f26b4b10) | Direct attestation test |
+| Apr 9, 2026 | [`0xd9cfdc...bfd2d`](https://evmtestnet.confluxscan.io/tx/0xd9cfdca0eb46dd126e6ff5894f55263c42f9ffd23af0719678cac8d2a43bfd2d) | V2 Proof-to-Gasless — Z3 4/4, TRACER 0.47, gaslessGranted=true |
+| Apr 9, 2026 | [`0xaa618e...05ed5`](https://evmtestnet.confluxscan.io/tx/0xaa618ed01f1fd80dedf866c3b09d6edf54fbdc60cc7df6dc893dc5d5c4605ed5) | DOFProofRegistryV2 deployment |
+| Apr 6, 2026 | [`bf98ea58...bebf740c`](https://evmtestnet.confluxscan.io/tx/bf98ea58265dcd8433f594376d0d679fde65d93ae8cc18d841627308bebf740c) | Full 6-step governance cycle — Agent #1687 (V1) |
+| Apr 6, 2026 | [`77d4ddea...b12465e5`](https://evmtestnet.confluxscan.io/tx/77d4ddea0043bf6df5a916cd7040886e0a97480ab12465e5842ce7c2f26b4b10) | Direct attestation test (V1) |
 
 ## 🛠️ Technology Stack
 
@@ -84,7 +87,7 @@ Result: a tamper-proof, on-chain record that an agent passed formal governance v
 | Agent framework | CrewAI |
 | Formal verification | Z3 SMT Solver (Microsoft Research) |
 | Blockchain | Conflux eSpace (chain 71) + 7 other EVM chains |
-| Smart contracts | Solidity (DOFProofRegistry.sol) |
+| Smart contracts | Solidity (DOFProofRegistryV1 + V2 Proof-to-Gasless) |
 | Web3 | web3.py v7.x |
 | Gas Sponsorship | Conflux SponsorWhitelistControl |
 | Agent identity | ERC-8004 (Autonomous Agent Identity Standard) |
@@ -116,7 +119,8 @@ cast call 0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83 \
 |--------|-------|
 | Tests passing | 4,308 |
 | Z3 formal theorems proven | 4/4 |
-| On-chain attestations (Conflux) | 38+ |
+| On-chain attestations (Conflux V1) | 38+ |
+| On-chain attestations (Conflux V2) | 2 (deployed Apr 9, 2026) |
 | On-chain attestations (all chains) | 80+ |
 | Autonomous agent cycles | 238+ |
 | LLM calls in governance path | 0 |
@@ -125,9 +129,11 @@ cast call 0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83 \
 ## 🗺️ Roadmap
 
 ### Phase 1 — Hackathon ✅
-- [x] DOFProofRegistry on Conflux Testnet
-- [x] Gas Sponsorship integration
-- [x] 38+ proofs registered, 2 verified TXs
+- [x] DOFProofRegistryV1 on Conflux Testnet — 38+ proofs
+- [x] DOFProofRegistryV2 Proof-to-Gasless — deployed Apr 9
+- [x] Gas Sponsorship + SponsorWhitelistControl integrated
+- [x] Conflux MCP Server — first MCP for Conflux
+- [x] 4 verified TXs, gaslessGranted=true confirmed on-chain
 - [x] 4/4 Z3 theorems PROVEN
 - [x] dof-sdk v0.6.0 on PyPI
 
