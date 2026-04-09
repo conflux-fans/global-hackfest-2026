@@ -119,9 +119,10 @@ cast call 0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83 \
 |--------|-------|
 | Tests passing | 4,308 |
 | Z3 formal theorems proven | 4/4 |
-| On-chain attestations (Conflux V1) | 38+ |
+| On-chain attestations (Conflux V1) | 145 (confirmed on-chain) |
 | On-chain attestations (Conflux V2) | 2 (deployed Apr 9, 2026) |
-| On-chain attestations (all chains) | 80+ |
+| On-chain attestations (all chains) | 147+ Conflux + 80+ other chains |
+| MCP tools operational | 6/6 (all complete, no stubs) |
 | Autonomous agent cycles | 238+ |
 | LLM calls in governance path | 0 |
 | Active chains | 8 |
@@ -129,7 +130,7 @@ cast call 0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83 \
 ## 🗺️ Roadmap
 
 ### Phase 1 — Hackathon ✅
-- [x] DOFProofRegistryV1 on Conflux Testnet — 38+ proofs
+- [x] DOFProofRegistryV1 on Conflux Testnet — 145 proofs (confirmed)
 - [x] DOFProofRegistryV2 Proof-to-Gasless — deployed Apr 9
 - [x] Gas Sponsorship + SponsorWhitelistControl integrated
 - [x] Conflux MCP Server — first MCP for Conflux
