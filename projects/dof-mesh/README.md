@@ -8,6 +8,8 @@ Mathematically proven, on-chain verified compliance for AI agents — before the
 [![Tests](https://img.shields.io/badge/tests-4%2C308%20passing-brightgreen)](https://github.com/Cyberpaisa/DOF-MESH)
 [![Z3](https://img.shields.io/badge/Z3%20proofs-4%2F4%20PROVEN-blue)](https://github.com/Cyberpaisa/DOF-MESH)
 
+**[📺 Demo Video (3 min)](https://youtu.be/XAuTQFNLQQY)** · **[🎬 Participant Intro (44s)](https://youtu.be/d7TxKIzKXds)** · **[🌐 dofmesh.com](https://dofmesh.com)** · **[🐦 Submission Tweet](https://x.com/Cyber_paisa/status/2042478622972277158)** · **[⚡ Electric Capital PR #2815 ✅](https://github.com/electric-capital/open-dev-data/pull/2815)**
+
 ## Overview
 
 DOF-MESH is the first framework that **mathematically proves** autonomous AI agents behaved correctly — before they act. It combines Z3 SMT formal verification, deterministic governance (zero LLM in the decision path), and on-chain attestation via Conflux eSpace to produce tamper-proof compliance records.
@@ -48,27 +50,97 @@ Result: a tamper-proof, on-chain record that an agent passed formal governance v
 
 ## Go-to-Market Plan
 
-**Who it's for:** AI agent developers needing verifiable compliance for regulated industries (finance, healthcare, legal) and blockchain protocols wanting provably-correct agents managing treasuries or DAOs.
+> "Unprovable AI decisions shouldn't control money."
 
-**Why Conflux:** Gas Sponsorship is architecturally necessary for agent infrastructure. Agents should not hold gas — they should act. Conflux's native `SponsorWhitelistControl` makes zero-friction agent compliance possible. No other EVM chain has this natively.
+**Category we're creating:** Deterministic Agent Governance — not "security tool," not "monitoring." A new category.
 
-**Acquisition:** dof-sdk on PyPI (`pip install dof-sdk`) — developers adopt the framework and Conflux integration comes included. ERC-8004 (Autonomous Agent Identity Standard, submitted to Ethereum Magicians) creates network effects as the identity layer DOF-MESH verifies.
+### The Market Window (Why Now)
 
-**Metrics:** 80+ on-chain attestations across 8 chains, 238+ autonomous agent cycles completed, 38+ proofs on Conflux Testnet.
+| Signal | Data |
+|---|---|
+| OZ Defender closes | July 1, 2026 — $180B+ in DeFi increasingly relies on automated governance |
+| AI agent incidents | 88% of orgs had incidents in 2026 (Gravitee State of AI Security) |
+| MCP ecosystem growth | Rapidly growing — 10,000+ active servers as of March 2026 |
+| Formal verification market | $420M → $2.1B by 2033, CAGR 19.8% (Research Intelo) |
+
+### Beachhead — First Market
+
+**AI agents that move money.** Autonomous trading bots, treasury automation agents, governance execution agents — any agent with financial authority where one wrong decision costs millions.
+
+- Highest pain: one exploit = catastrophic loss
+- Fastest decision cycle: developers ship weekly
+- Clear ROI: 1 incident avoided = ~$5.3M saved vs $1,188/year (Pro plan)
+
+### Traction — Live Today
+
+| Metric | Value |
+|---|---|
+| Unit tests passing | 4,308 |
+| Autonomous cycles | 238+ (0 governance incidents) |
+| On-chain transactions | 146 confirmed (Conflux eSpace) |
+| Chains deployed | 9 (4 mainnets: Avalanche, Base, Celo, Tempo) |
+| Z3 theorems proven | 4/4 per cycle |
+| Latency | 8.2ms average |
+| External validation | +26.1% improvement across 10 frontier models (Adaline, 200M+ API calls/day) |
+
+> This is not a prototype. This is running.
+
+### Pricing
+
+| Tier | Price | Verifications | For |
+|---|---|---|---|
+| Free | $0 | 100/month | Developers evaluating |
+| Builder | $29/mo | 5,000/month + dashboard | Indie devs, small protocols |
+| Pro | $99/mo | 50,000/month + MCP + SLA | DeFi protocols, AI agent teams |
+| Enterprise | Custom | Unlimited + audit reports | Banks, regulated teams |
+
+**ROI:** Average Web3 incident loss 2025: ~$5.3M (CertiK). DOF-MESH Pro annual = $1,188. ROI for one incident avoided: **4,461x**.
+
+### Market Opportunity
+
+| | Value | Source |
+|---|---|---|
+| AI agent security TAM | $574.9M (2026), CAGR 50.4% | Gravitee 2026 |
+| Agentic AI broader TAM | $9.14B (2026) → $139B (2034) | Fortune Business Insights |
+| Formal verification TAM | $420M → $2.1B by 2033 | Research Intelo |
+| SAM — on-chain governance | ~$270M | DOF-MESH addressable segment |
+| SOM — 18 months | $4.7M (Conflux + 5 chains) | Based on current deployments |
+
+### Unfair Advantage
+
+| What | Why it matters |
+|---|---|
+| Z3 + TRACER combined | Only system with formal verification + behavioral tracing in production |
+| +26.1% model improvement | Validated on Adaline (200M+ API calls/day) — not self-reported |
+| 4,308 tests before launch | Production-grade from day one, not a prototype |
+| Proof-to-Gasless on Conflux | Conflux uniquely enables native gas sponsorship — $0 gas for verified agents |
+| First Conflux MCP Server | Distribution moat in fastest-growing developer infrastructure category |
+
+### 90-Day Execution
+
+| Days | Action | Goal |
+|---|---|---|
+| 1–30 | 10 Conflux protocol pilots via hackathon network | First paying users |
+| 1–30 | MCP server listed publicly | Organic developer reach |
+| 31–60 | "Defender Migration Guide" published | Capture exiting teams |
+| 61–90 | Conflux mainnet deployment + USDT0 integration | Production milestone |
+| 61–90 | First enterprise pilot signed | $1K+ MRR anchor |
 
 ## ⚡ Conflux Integration
 
-- [x] **DOFProofRegistryV1** — [`0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83`](https://evmtestnet.confluxscan.io/address/0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83) — 38+ proofs, production-proven.
-- [x] **DOFProofRegistryV2 (Proof-to-Gasless)** — [`0x8B6BfF194641dfB067e7d9FDF4fb8A91A70Bb8D6`](https://evmtestnet.confluxscan.io/address/0x8B6BfF194641dfB067e7d9FDF4fb8A91A70Bb8D6) — deployed Apr 9, 2026. Agents with TRACER≥0.4 + Constitution≥0.9 are automatically added to `SponsorWhitelistControl`. **Math earns gas-free transactions.**
-- [x] **Gas Sponsorship** — `SponsorWhitelistControl` at `0x0888000000000000000000000000000000000001`. Zero-gas compliance registration for qualifying agents.
-- [x] **Conflux MCP Server** — First Model Context Protocol server for Conflux. Any LLM (Claude, GPT, Cursor) connects to on-chain governance via 6 tools (all fully operational): `verify_agent_compliance`, `register_proof_on_chain`, `check_gasless_status`, `get_proof_history`, `get_network_stats`, `analyze_defi_compliance`.
+- [x] **DOFProofRegistryV1** — [`0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83`](https://evmtestnet.confluxscan.io/address/0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83) — 146 proofs, production-proven.
+- [x] **DOFProofRegistryV2 (Proof-to-Gasless)** — [`0x58F0126B647E87a9a49e79971E168ce139326fd1`](https://evmtestnet.confluxscan.io/address/0x58F0126B647E87a9a49e79971E168ce139326fd1) — LIVE. Agents with TRACER≥0.4 + Constitution≥0.9 auto-whitelisted in `SponsorWhitelistControl`. **Math earns gas-free transactions.**
+- [x] **Gas Sponsorship** — `SponsorWhitelistControl` at `0x0888000000000000000000000000000000000001`. Zero-gas compliance for qualifying agents.
+- [x] **Conflux MCP Server** — First MCP server for Conflux. Any LLM (Claude, GPT, Cursor) connects to on-chain governance via 6 tools: `verify_agent_compliance`, `register_proof_on_chain`, `check_gasless_status`, `get_proof_history`, `get_network_stats`, `analyze_defi_compliance`.
 
 ## 🎬 Demo
 
-- **Video**: [https://youtu.be/WwpqXdYYID8](https://youtu.be/WwpqXdYYID8) (104 seconds)
+- **Demo Video (3 min)**: [https://youtu.be/XAuTQFNLQQY](https://youtu.be/XAuTQFNLQQY)
+- **Participant Intro (44s)**: [https://youtu.be/d7TxKIzKXds](https://youtu.be/d7TxKIzKXds)
+- **Submission Tweet**: [https://x.com/Cyber_paisa/status/2042478622972277158](https://x.com/Cyber_paisa/status/2042478622972277158)
 - **Docs**: [https://dofmesh.com](https://dofmesh.com)
 - **GitHub**: [github.com/Cyberpaisa/DOF-MESH](https://github.com/Cyberpaisa/DOF-MESH/tree/conflux-hackathon)
-- **Contract V2**: [ConfluxScan](https://evmtestnet.confluxscan.io/address/0x8B6BfF194641dfB067e7d9FDF4fb8A91A70Bb8D6)
+- **Electric Capital PR**: [#2815 MERGED ✅](https://github.com/electric-capital/open-dev-data/pull/2815)
 
 ### Verified Transactions on Conflux
 
@@ -86,7 +158,7 @@ Result: a tamper-proof, on-chain record that an agent passed formal governance v
 | Language | Python 3.12 |
 | Agent framework | CrewAI |
 | Formal verification | Z3 SMT Solver (Microsoft Research) |
-| Blockchain | Conflux eSpace (chain 71) + 7 other EVM chains |
+| Blockchain | Conflux eSpace (chain 71) + 8 other EVM chains |
 | Smart contracts | Solidity (DOFProofRegistryV1 + V2 Proof-to-Gasless) |
 | Web3 | web3.py v7.x |
 | Gas Sponsorship | Conflux SponsorWhitelistControl |
@@ -97,15 +169,26 @@ Result: a tamper-proof, on-chain record that an agent passed formal governance v
 ## Quick Start
 
 ```bash
+pip install dof-sdk
+
+from dof import DOFVerifier
+v = DOFVerifier()
+result = v.verify_action(
+    agent_id="my-agent",
+    action="transfer",
+    params={"amount": 500, "token": "USDC"}
+)
+# → z3_proof: "4/4 VERIFIED"
+# → attestation: "0x44b45cd..." ← permanent on Conflux
+# → latency_ms: 8.2
+# → verdict: "APPROVED"
+```
+
+```bash
+# Or run full demo
 git clone https://github.com/Cyberpaisa/DOF-MESH
-cd DOF-MESH
-pip install -r requirements.txt
-
-# Full 6-step governance cycle (dry-run)
+cd DOF-MESH && pip install -r requirements.txt
 python3 scripts/conflux_demo.py --dry-run
-
-# With real on-chain attestation (requires CONFLUX_PRIVATE_KEY)
-python3 scripts/conflux_demo.py
 
 # Verify on-chain (no DOF software needed)
 cast call 0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83 \
@@ -119,29 +202,29 @@ cast call 0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83 \
 |--------|-------|
 | Tests passing | 4,308 |
 | Z3 formal theorems proven | 4/4 |
-| On-chain attestations (Conflux V1) | 145 (confirmed on-chain) |
+| On-chain attestations (Conflux V1) | 146 confirmed |
 | On-chain attestations (Conflux V2) | 2 (deployed Apr 9, 2026) |
-| On-chain attestations (all chains) | 147+ Conflux + 80+ other chains |
-| MCP tools operational | 6/6 (all complete, no stubs) |
+| MCP tools operational | 6/6 |
 | Autonomous agent cycles | 238+ |
 | LLM calls in governance path | 0 |
-| Active chains | 8 |
+| Active chains | 9 (4 mainnets) |
 
 ## 🗺️ Roadmap
 
 ### Phase 1 — Hackathon ✅
-- [x] DOFProofRegistryV1 on Conflux Testnet — 145 proofs (confirmed)
+- [x] DOFProofRegistryV1 on Conflux Testnet — 146 proofs confirmed
 - [x] DOFProofRegistryV2 Proof-to-Gasless — deployed Apr 9
 - [x] Gas Sponsorship + SponsorWhitelistControl integrated
-- [x] Conflux MCP Server — first MCP for Conflux
-- [x] 4 verified TXs, gaslessGranted=true confirmed on-chain
+- [x] Conflux MCP Server — first MCP for Conflux Network
+- [x] gaslessGranted=true confirmed on-chain
 - [x] 4/4 Z3 theorems PROVEN
 - [x] dof-sdk v0.6.0 on PyPI
+- [x] Electric Capital PR #2815 MERGED
 
 ### Phase 2 — Conflux Production (Q2 2026)
 - [ ] Conflux eSpace Mainnet deployment
 - [ ] Gas Sponsorship automation for agent fleets
-- [ ] Conflux Core Space integration
+- [ ] USDT0 integration for agent payment rails
 
 ### Phase 3 — Ecosystem (Q3-Q4 2026)
 - [ ] ERC-8004 + DOF compliance bundle
@@ -152,6 +235,7 @@ cast call 0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83 \
 
 - **GitHub**: [@Cyberpaisa](https://github.com/Cyberpaisa)
 - **X/Twitter**: [@Cyber_paisa](https://x.com/Cyber_paisa)
+- **Telegram**: [@Cyber_paisa](https://t.me/Cyber_paisa)
 - **Docs**: [dofmesh.com](https://dofmesh.com)
 - **ERC-8004**: [ethereum-magicians.org/t/erc-formal-governance-proof-registry/28152](https://ethereum-magicians.org/t/erc-formal-governance-proof-registry/28152)
 
@@ -159,4 +243,4 @@ cast call 0x554cCa8ceBE30dF95CeeFfFBB9ede5bA7C7A9B83 \
 
 **"The majority of frameworks verify what happened. DOF verifies what is about to happen."**
 
-*Built with ❤️ for Global Hackfest 2026 — Medellín, Colombia*
+*Built by @Cyber_paisa for Global Hackfest 2026 — Medellín, Colombia*
