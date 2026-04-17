@@ -1,0 +1,4 @@
+- **Project Repo:** https://github.com/Jay-Gould7/InsightMesh
+- **Demo Video (YouTube):** [InsightMesh | Global Hackfest 2026 Submission](https://youtu.be/oSJx-vxCimE?si=da_0N-vuDqgart5J)
+- **Intro Video (YouTube):** [InsightMesh Intro Video - Conflux Global Hackfest 2026](https://youtu.be/9GkTvDqZRkk?si=65hMKWAJxSWOhzKR)
+- **Twitter Announcement:** [X](https://x.com/Gould777/status/2045026418204270720)
