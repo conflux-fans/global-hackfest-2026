@@ -202,7 +202,8 @@ Conflux eSpace
   |- RewardVault
   |- USDT0 deposit and distribution
 ```
-![alt text](demo.png)
+<img width="2788" height="1536" alt="demo" src="https://github.com/user-attachments/assets/adfd0582-054e-4f2b-9026-3419f9e3523f" />
+
 
 **High-level architecture description:**
 
