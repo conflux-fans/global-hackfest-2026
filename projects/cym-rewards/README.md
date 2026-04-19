@@ -48,6 +48,10 @@ Live at [cymstudio.app/catalogue](https://cymstudio.app/catalogue) · Chat at [c
   </tr>
 </table>
 
+**Proof of settlement.** 25 HKD Pacific Coffee → 3.24 USDT0 on Conflux eSpace → voucher delivered to email. 18 seconds from signature to `Completed` state.
+
+<p align="center"><img src="demo/screenshots/OrderCompletion.png" alt="Completed order — gasless USDT0 settlement in 18 seconds" width="600" /></p>
+
 Full visual tour with captions: [`demo/README.md`](demo/README.md).
 
 ## 🏆 Hackathon Information
