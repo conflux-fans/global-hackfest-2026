@@ -8,11 +8,11 @@
 - **MCP integration guide:** https://cymstudio.app/agents
 - **MCP endpoint:** `https://cymstudio.app/api/mcp/rewards`
 
-## Demo video (3–5 min)
+## Project intro video
 
 **Watch on YouTube:** [youtu.be/0VJXfjlGKjo](https://youtu.be/0VJXfjlGKjo)
 
-Script outline (what's shown):
+Covers (what's shown):
 
 1. Land on cymstudio.app, tour the editorial showreel (15s)
 2. Click Rewards → show the Tournament Prize Redemptions hero, 300+ brand catalogue
@@ -25,11 +25,11 @@ Script outline (what's shown):
 9. Switch to `/agents` and show the MCP integration guide briefly
 10. Close with a 10-second recap of the USDT0-on-Conflux gasless value prop
 
-## Participant intro video (30–60 sec)
+## Builder intro video (30–60 sec)
 
 **Watch on YouTube:** [youtu.be/xy3z2ZAp6aU](https://youtu.be/xy3z2ZAp6aU)
 
-Opening line: "I'm Tony Lau from Toronto, building CYM Rewards for Conflux Network's Global Hackfest 2026 — gasless USDT0 gift card redemptions on Conflux eSpace — and I'm excited to participate."
+Tony's participant intro — who's behind the project.
 
 ## Screenshots
 
