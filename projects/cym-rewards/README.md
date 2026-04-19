@@ -20,6 +20,25 @@ What's different:
 
 Live at [cymstudio.app/catalogue](https://cymstudio.app/catalogue).
 
+## 📸 Screenshots
+
+<table>
+  <tr>
+    <td width="50%"><img src="demo/screenshots/LandingPage.png" alt="Landing — editorial showreel" /></td>
+    <td width="50%"><img src="demo/screenshots/Catalogue.png" alt="Catalogue grid with USDT0 / USDC network selector" /></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="demo/screenshots/PurchaseModal.png" alt="Purchase modal — network + token calculation" /></td>
+    <td width="50%"><img src="demo/screenshots/Redemption.png" alt="Purchase modal — email + review & redeem" /></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="demo/screenshots/MCPForX402.png" alt="AI concierge — /chat landing" /></td>
+    <td width="50%"><img src="demo/screenshots/RedemptionEndpoint.png" alt="AI concierge — MCP tool call result" /></td>
+  </tr>
+</table>
+
+Full visual tour with captions: [`demo/README.md`](demo/README.md).
+
 ## 🏆 Hackathon Information
 
 - **Event**: Global Hackfest 2026

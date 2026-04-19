@@ -33,17 +33,43 @@ Opening line: "I'm Tony Lau from Toronto, building CYM Rewards for Conflux Netwo
 
 ## Screenshots
 
-`screenshots/` — TO BE ADDED. Recommended captures:
+All shots live in [`screenshots/`](screenshots/) — captured 2026-04-20 on the live production site.
 
-- `landing.png` — editorial showreel with video grid
-- `catalogue-hero.png` — "Turn your winnings into something real" serif hero
-- `catalogue-grid.png` — tilted-card product grid with USDT0 network selected
-- `purchase-modal.png` — PurchaseModal mid-flow showing the USDT0 amount + facilitator
-- `chat-product.png` — Kimi rendering a Pacific Coffee product card from `search_giftcards`
-- `chat-quote.png` — `QuoteCard` with "Review & pay" button opening the purchase modal
-- `agents-docs.png` — `/agents` MCP integration guide
-- `conflux-scan.png` — settlement transaction on ConfluxScan
-- `voucher-email.png` — the delivered gift-card voucher
+### Editorial showreel — `/`
+
+![Landing page](screenshots/LandingPage.png)
+
+The AI video-production portfolio for CYM Studio — the operating entity behind the rewards program.
+
+![Selected films](screenshots/Films.png)
+
+![What we build / About](screenshots/Description.png)
+
+### Tournament Prize Redemptions — `/catalogue`
+
+300+ brand catalogue, filterable by country and currency. Connected wallets see live USDT0 / USDC balances in the sidebar.
+
+![Catalogue grid](screenshots/Catalogue.png)
+
+**Gasless checkout.** Pick a network (USDT0 on Conflux eSpace / USDC on Ethereum), confirm the token breakdown (reward value, FX, service fee), enter email for voucher delivery, and sign one EIP-3009 `transferWithAuthorization` — the facilitator pays the CFX/ETH gas.
+
+<table>
+  <tr>
+    <td width="50%"><img src="screenshots/PurchaseModal.png" alt="Purchase modal — network + token calculation" /></td>
+    <td width="50%"><img src="screenshots/Redemption.png" alt="Purchase modal — email + review & redeem" /></td>
+  </tr>
+</table>
+
+### AI concierge — `/chat`
+
+Natural-language browsing powered by Kimi. Every user turn routes through the same MCP server an external agent would call — so the chat is a live demo of the agent integration.
+
+<table>
+  <tr>
+    <td width="50%"><img src="screenshots/MCPForX402.png" alt="Chat landing" /></td>
+    <td width="50%"><img src="screenshots/RedemptionEndpoint.png" alt="Chat — MCP tool call result" /></td>
+  </tr>
+</table>
 
 ## Winner video
 
