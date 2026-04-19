@@ -10,9 +10,9 @@
 
 ## Demo video (3–5 min)
 
-`walkthrough.mp4` — TO BE ADDED before the 2026-04-20 23:59:59 deadline.
+**Watch on YouTube:** [youtu.be/0VJXfjlGKjo](https://youtu.be/0VJXfjlGKjo)
 
-Script outline:
+Script outline (what's shown):
 
 1. Land on cymstudio.app, tour the editorial showreel (15s)
 2. Click Rewards → show the Tournament Prize Redemptions hero, 300+ brand catalogue
