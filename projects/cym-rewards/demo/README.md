@@ -27,7 +27,7 @@ Script outline (what's shown):
 
 ## Participant intro video (30–60 sec)
 
-`intro.mp4` — TO BE ADDED.
+**Watch on YouTube:** [youtu.be/xy3z2ZAp6aU](https://youtu.be/xy3z2ZAp6aU)
 
 Opening line: "I'm Tony Lau from Toronto, building CYM Rewards for Conflux Network's Global Hackfest 2026 — gasless USDT0 gift card redemptions on Conflux eSpace — and I'm excited to participate."
 
