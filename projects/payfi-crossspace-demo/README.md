@@ -22,9 +22,7 @@ PayFi Cross-border Escrow Demo models a cross-border e-commerce payment flow: pa
 | Name   | Role       | GitHub                                              | Discord        |
 | ------ | ---------- | --------------------------------------------------- | -------------- |
 | Ada    | Architect  | [@AlphaVeteran](https://github.com/AlphaVeteran)   | ++alphaoldie++ |
-| Yixing | Developer  | [@SauTi9138](https://github.com/SauTi9138)         | `{{YIXING_DISCORD}}` |
-
-Replace `{{YIXING_DISCORD}}` with Yixing's real Discord handle (examples: `username`, `username#1234`, `@displayname`).
+| Yixing | Developer  | [@SauTi9138](https://github.com/SauTi9138)         | lu_yi9138 |
 
 ## Problem Statement
 
@@ -162,12 +160,77 @@ Traditional rails rarely offer programmable milestone settlement with on-chain a
 - **Contracts**: Solidity (Foundry)
 - **Conflux**: Core + eSpace testnet
 
+## Testing
+
+Cross-space and escrow flows are validated end-to-end on **Conflux Core Testnet** (`chainId` **1**, Fluent) and **Conflux eSpace Testnet** (`chainId` **71**, MetaMask). Full step-by-step instructions (Chinese), env vars, contract tables, and troubleshooting: [`docs/cross-space-intent-test-guide.zh.md`](https://github.com/AlphaVeteran/payfidemo/blob/feat/conflux-hackfest-2026/docs/cross-space-intent-test-guide.zh.md) in the main repo.
+
+### Scope
+
+- **In scope:** Core `placeOrderDeposit` → Relayer listens for `OrderDeposited` → eSpace `createEscrowFromCore`; frontend **intent** creation; eSpace **Approve + Deposit**; **dual-signature** milestone releases; optional **refund** after expiry.
+- **PoC boundary:** Event-mapping loop (Core event → eSpace escrow). **No** production cross-space asset bridge yet.
+
+### Roles
+
+| Role | Responsibility |
+| --- | --- |
+| `admin` | Deploy/config, overall control |
+| `relayer` | Watches Core, calls eSpace adapter |
+| `buyer` | Core order + eSpace user flows |
+| `seller` | Seller console: sign and releases |
+
+Use **distinct addresses** (e.g. different HD indices) per role when testing.
+
+### Local stack (three terminals)
+
+From the main repo, with `conflux-testnet` env applied:
+
+1. **API:** `npm run env:switch:conflux-testnet` → `npm run dev:conflux-testnet`
+2. **Frontend:** `npm run dev:frontend`
+3. **Relayer:** `npm run relayer:core-to-espace`
+
+Expect relayer logs such as `mapped coreOrder=…` after a Core deposit when the pipeline is healthy.
+
+### Test cases (pass criteria)
+
+| ID | Scenario | What to verify |
+| --- | --- | --- |
+| **A** | Core order → eSpace map | Run `npm run demo:cross-space` with buyer on Core; logs show `core order placed`, relayer `mapped coreOrder=…`, demo `mapped to escrowId=…`; record `coreOrderId` and `escrowId`. |
+| **B** | New intent (eSpace) | Buyer on eSpace: create intent (seller address, total, installments, duration); `intentId` shown; status `awaiting_funding`; listable in UI. Use **MockERC20** aligned with deployed `PayFiEscrow` (see env / guide). |
+| **C** | Fund escrow | Approve + Deposit succeed; status → `active` or `partially_settled`; txs visible on [eSpace testnet explorer](https://evmtestnet.confluxscan.io/). |
+| **D** | Dual-sig releases | Buyer signs (user step) → seller signs (merchant) → submit milestone release; `releaseNonce` / `releaseCount` / `releasedTotal` advance; can reach `settled` depending on amounts. |
+| **E** (optional) | Refund | After `expiresAt`, “refund remainder” succeeds; status `refunded` or balances reflect return. |
+
+### Mapping IDs (`coreOrderId` / `escrowId` / `intentId`)
+
+Relayer and API link **Core order ↔ eSpace escrow ↔ backend intent**. Query examples (local API port as deployed):
+
+- `GET /api/payfi/v1/intents/core-links/by-core-order/:coreOrderId`
+- `GET /api/payfi/v1/intents/core-links/by-escrow/:escrowId`
+- `GET /api/payfi/v1/intents/core-links/by-intent/:intentId`
+
+### Acceptance checklist (for judges / internal sign-off)
+
+| Item | Pass? | Evidence |
+| --- | --- | --- |
+| Core deposit | | Core tx hash |
+| eSpace mapping | | Adapter tx hash |
+| Create intent | | `intentId` |
+| Fund (Approve / Deposit) | | Tx hashes |
+| Dual-sig releases | | Release tx + `releaseCount` |
+| Refund (optional) | | Refund tx |
+
+Record explorer links for Core and eSpace, and keep `coreOrderId` / `escrowId` / `intentId` together for traceability.
+
+### Contract tests
+
+Solidity tests live with the Foundry workspace in the main repo (`forge test` / project `package.json` scripts — see repo root `README` and `package.json`).
+
 ## Repository & Demo
 
 - **Main repo**: [AlphaVeteran/payfidemo @ `feat/conflux-hackfest-2026`](https://github.com/AlphaVeteran/payfidemo/tree/feat/conflux-hackfest-2026)
 - **Live demo (Conflux)**: [crossborder-conflux-front.up.railway.app](https://crossborder-conflux-front.up.railway.app)
 - **Demo video (≤5 min)**: [YouTube](https://youtu.be/Hx-I4cbZfzg)
-- **Participant intro (30–60 s)**: Covered in the demo video (first segment). *Optional:* add a dedicated short intro URL here when published.
+- **Participant intro (30–60 s)**: [YouTube](https://www.youtube.com/watch?v=N_ln2n1xECY)
 
 ## Submission Links
 
