@@ -235,7 +235,7 @@ Solidity tests live with the Foundry workspace in the main repo (`forge test` / 
 ## Submission Links
 
 - **Electric Capital open-dev-data PR**: [PR #2839](https://github.com/electric-capital/open-dev-data/pull/2839)
-- **Social post (X)**: [Post](https://x.com/AlphaVeteran0x/status/2045323282493342170)
+- **Social post (X)**: [Post](https://x.com/AlphaVeteran0x/status/2046101960626143599?s=20)
 
 ## Known Limitations
 
