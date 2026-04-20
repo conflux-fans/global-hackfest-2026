@@ -1,7 +1,7 @@
 # VeilPay Video Demonstration
 
 ### Demo Video URL
-[https://youtu.be/veilpay-demo](https://youtu.be/veilpay-demo) (Placeholder)
+(Coming Soon)
 
 ### Script Overview
 

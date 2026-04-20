@@ -92,10 +92,10 @@ VeilPay provides a multi-layer privacy model:
 ## 🎬 Demo
 
 ### Live Demo
-- **URL**: [https://veilpay.vercel.app](https://veilpay.vercel.app)
+- **URL**: [https://veilpay-eight.vercel.app](https://veilpay-eight.vercel.app)
 
 ### Demo Video
-- **YouTube**: [https://youtu.be/veilpay-demo](https://youtu.be/veilpay-demo) (Placeholder)
+- **YouTube**: (Coming Soon)
 
 ## 📄 Smart Contracts
 

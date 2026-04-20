@@ -6,10 +6,10 @@
 - **Matcher Service Repository**: [https://github.com/nickthelegend/veilpay-matcher](https://github.com/nickthelegend/veilpay-matcher)
 
 ### Live Resources
-- **Live Demo**: [https://veilpay.vercel.app](https://veilpay.vercel.app)
-- **About Page**: [https://veilpay.vercel.app/about](https://veilpay.vercel.app/about)
-- **Demo Video**: [https://youtu.be/veilpay-demo](https://youtu.be/veilpay-demo) (Placeholder)
-- **Slide Deck**: [https://gamma.app/docs/VeilPay-Privacy-First-DeFi-on-Conflux](https://gamma.app/docs/VeilPay-Privacy-First-DeFi-on-Conflux) (Placeholder)
+- **Live Demo**: [https://veilpay-eight.vercel.app](https://veilpay-eight.vercel.app)
+- **About Page**: [https://veilpay-eight.vercel.app/about](https://veilpay-eight.vercel.app/about)
+- **Demo Video**: (Coming Soon)
+- **Slide Deck**: (Coming Soon)
 
 ### Submission Details
 - **Electric Capital PR**: [https://github.com/electric-capital/open-dev-data/pull/2848](https://github.com/electric-capital/open-dev-data/pull/2848)
