@@ -1,0 +1,4 @@
+# GitHub rejects pushes containing individual files >100 MB.
+# demo-video.mp4 is 187 MB; host it on YouTube and link from links.md
+# instead of committing. Keep the small participant-intro.mp4 locally.
+projects/tippy/demo/demo-video.mp4
