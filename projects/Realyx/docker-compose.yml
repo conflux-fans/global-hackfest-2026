@@ -1,0 +1,127 @@
+# Realyx - Docker Compose
+# Run: docker-compose up -d
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:16-alpine
+    container_name: realyx-postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-realyx}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-realyx_secret}
+      POSTGRES_DB: ${POSTGRES_DB:-realyx}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-realyx}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Redis Cache
+  redis:
+    image: redis:7-alpine
+    container_name: realyx-redis
+    command: redis-server --appendonly yes
+    volumes:
+      - redis_data:/data
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: [ "CMD", "redis-cli", "ping" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+  # Backend API Server
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: realyx-backend
+    environment:
+      PORT: 3001
+      WS_PORT: 3002
+      NODE_ENV: production
+      POSTGRES_URL: ${POSTGRES_URL:-postgres://realyx:realyx_secret@postgres:5432/realyx}
+      CHAIN_ID: ${CHAIN_ID:-71}
+      RPC_URL: ${RPC_URL:-https://evmtestnet.confluxrpc.com}
+      RPC_FALLBACK_URL: ${RPC_FALLBACK_URL:-https://evmtestnet.confluxrpc.org}
+      TRADING_CORE_ADDRESS: ${TRADING_CORE_ADDRESS:-0x64f277f73bfc81Ad80286a4266c0E0613d867Df3}
+      VAULT_CORE_ADDRESS: ${VAULT_CORE_ADDRESS:-0xB5C983d038caA21f4a9520b0EFAb2aD71DE4e714}
+      ORACLE_AGGREGATOR_ADDRESS: ${ORACLE_AGGREGATOR_ADDRESS:-0x89cC8eAbF2e967d81FD04D1023298A3bDcE67450}
+    ports:
+      - "3001:3001"
+      - "3002:3002"
+    restart: unless-stopped
+
+  # Frontend (nginx proxies /api and /ws to backend when served from port 3000)
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # Use same-origin paths so nginx proxies to backend
+        VITE_API_URL: ${VITE_API_URL:-/api}
+        VITE_WS_URL: ${VITE_WS_URL:-ws://localhost:3000/ws}
+        VITE_RPC_URL: ${VITE_RPC_URL:-https://evmtestnet.confluxrpc.com}
+        VITE_CONFLUX_TESTNET_RPC_URL: ${VITE_CONFLUX_TESTNET_RPC_URL:-https://evmtestnet.confluxrpc.com}
+        VITE_APP_URL: ${VITE_APP_URL:-http://localhost:3000}
+        VITE_WALLET_CONNECT_PROJECT_ID: ${VITE_WALLET_CONNECT_PROJECT_ID:-}
+        VITE_POSITION_TOKEN_ADDRESS: ${VITE_POSITION_TOKEN_ADDRESS:-0x4368b5741A105c1ACE50ad98581fDa050685fa8B}
+        VITE_ORACLE_AGGREGATOR_ADDRESS: ${VITE_ORACLE_AGGREGATOR_ADDRESS:-0x89cC8eAbF2e967d81FD04D1023298A3bDcE67450}
+        VITE_VAULT_CORE_ADDRESS: ${VITE_VAULT_CORE_ADDRESS:-0xB5C983d038caA21f4a9520b0EFAb2aD71DE4e714}
+        VITE_TRADING_CORE_ADDRESS: ${VITE_TRADING_CORE_ADDRESS:-0x64f277f73bfc81Ad80286a4266c0E0613d867Df3}
+        VITE_MOCK_USDC_ADDRESS: ${VITE_MOCK_USDC_ADDRESS:-0xa56Ba38f3c820D6cf31a68CBBD0d25c0F5644d35}
+    container_name: realyx-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  # Prometheus
+  prometheus:
+    image: prom/prometheus:v2.47.0
+    container_name: realyx-prometheus
+    volumes:
+      - ./infrastructure/monitoring/prometheus-docker.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.enable-lifecycle'
+    ports:
+      - "9090:9090"
+    restart: unless-stopped
+
+  # Grafana
+  grafana:
+    image: grafana/grafana:10.2.0
+    container_name: realyx-grafana
+    environment:
+      GF_SECURITY_ADMIN_PASSWORD: ${GRAFANA_PASSWORD:-admin123}
+      GF_USERS_ALLOW_SIGN_UP: false
+    volumes:
+      - ./infrastructure/monitoring/grafana/provisioning:/etc/grafana/provisioning
+      - grafana_data:/var/lib/grafana
+    ports:
+      - "3003:3000"
+    depends_on:
+      - prometheus
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+  redis_data:
+  prometheus_data:
+  grafana_data:
+
+
+networks:
+  default:
+    name: realyx-network
