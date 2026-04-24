@@ -1,6 +1,6 @@
-# [Your Project Name]
+# SeamPay
 
-One-line description of what it does.
+Real-time USDT0 payroll streaming on Conflux eSpace.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Conflux](https://img.shields.io/badge/built%20on-Conflux-blue)](https://confluxnetwork.org)
@@ -8,452 +8,353 @@ One-line description of what it does.
 
 ## Overview
 
-Short description: what problem it solves and how. What’s different about it and how you use Conflux.
+SeamPay is a non-custodial payroll streaming protocol built on Conflux eSpace. Employers deposit USDT0 into a vault contract and set a per-second salary rate for each worker. Workers accrue earnings every second and can withdraw anytime with no intermediary and no minimum amount. It replaces the traditional monthly payroll batch cycle with a continuous, on-chain stream that settles in 3 seconds at fractions of a cent in gas fees.
 
-## 🏆 Hackathon Information
+## Hackathon Information
 
 - **Event**: Global Hackfest 2026
-- **Focus Area**: [Open Innovation - Build anything you want using Conflux features]
-- **Team**: [Team Name]
-- **Submission Date**: 2026-04-20 @ 11:59:59
+- **Focus Area**: Open Innovation - Build anything you want using Conflux features
+- **Team**: SeamPay
+- **Submission Date**: 2026-04-20
 
-## 👥 Team
+## Team
 
 | Name | Role | GitHub | Discord |
 |------|------|--------|---------|
-| [Name 1] | [Role] | [@username](https://github.com/username) | username#1234 |
-| [Name 2] | [Role] | [@username](https://github.com/username) | username#1234 |
-| [Name 3] | [Role] | [@username](https://github.com/username) | username#1234 |
-| [Name 4] | [Role] | [@username](https://github.com/username) | username#1234 |
-| [Name 5] | [Role] | [@username](https://github.com/username) | username#1234 |
+| [Ayush Chandekar] | Smart Contracts + Backend | [ayu-ch](https://github.com/ayu-ch) | hsuya_ |
+| [Nitin Gupta] | Frontend | [@nitininhouse](https://github.com/nitininhouse) | astacode_7777 |
 
-## 🚀 Problem Statement
+## Problem Statement
 
-**What problem does your project solve?**
+Cross-border payroll is broken. A remote worker in Southeast Asia or Latin America working for a company in the US or Europe faces a painful reality every month:
 
-Describe the specific problem or challenge you're addressing. Include:
-- Why this problem matters
-- Who is affected by this problem
-- Current limitations or gaps in existing solutions
-- How blockchain technology can help solve this problem
+- **3 to 5 day delays** between when work is done and when pay arrives
+- **3 to 5% cut** taken by banks, payment processors, and SWIFT intermediaries
+- **No visibility** into when money will actually land in their account
+- **Currency conversion losses** on top of transfer fees
+- **Minimum transfer thresholds** that make small or frequent payments impractical
 
-## 💡 Solution
+Traditional payroll systems were designed for a world of local employees, monthly pay cycles, and centralized banks. They are fundamentally incompatible with the global, remote, async nature of modern work.
 
-**How does your project address the problem?**
+For workers living paycheck to paycheck, a 5-day delay is not an inconvenience. It is a financial emergency. Blockchain technology solves this by enabling programmable, permissionless, per-second money movement that no bank or processor can block or delay.
 
-Explain your approach and solution:
-- High-level overview of your solution
-- Key features and functionality
-- How it improves upon existing solutions
-- Benefits for users and the ecosystem
+## Solution
 
-## Go-to-Market Plan (required)
+SeamPay replaces the payroll batch cycle with a continuous stream.
 
-- Who’s it for and why would they use it?
-- How will you get users or developers to it?
-- Milestones or metrics you care about (e.g. adoption, TVL, usage)
-- How it fits Conflux and the wider ecosystem
+An employer deposits USDT0 into a non-custodial vault contract on Conflux eSpace. They set a per-second salary rate for each worker. From that moment, the worker's balance starts accruing every second, on-chain, transparently. The worker can withdraw what they have earned at any time, with no intermediary, no approval required, and no minimum amount.
 
-## ⚡ Conflux Integration
+There is no payday. There is no cutoff date. The work happens every second, and so does the pay.
 
-**How does your project leverage Conflux features?**
+**For employers:** fund once, stream indefinitely. Full visibility into vault balance, daily burn rate, runway in days, and every active worker stream on one screen.
 
-Check all that apply and provide details:
+**For workers:** your earned balance is always yours. Pull it on day 1, day 7, or let it accumulate. The contract enforces it, not a promise.
 
-- [ ] **Core Space** - [Describe how you use Core Space]
-- [ ] **eSpace** - [Describe how you use eSpace]
-- [ ] **Cross-Space Bridge** - [Describe cross-space functionality]
-- [ ] **Gas Sponsorship** - [Describe sponsored transactions]
-- [ ] **Built-in Contracts** - [Which contracts and how]
-- [ ] **Tree-Graph Consensus** - [How you leverage unique consensus]
+## Go-to-Market Plan
+
+**Who is it for:**
+SeamPay targets remote-first companies that hire internationally and workers in emerging markets who bear the cost of traditional payroll. Early adopters are crypto-native companies already paying in stablecoins who want more granular, real-time control over payroll.
+
+**How we get users:**
+- Direct outreach to crypto companies and DAOs that already use USDT for contractor payments
+- Integration with Conflux ecosystem projects looking for payroll infrastructure
+- Word of mouth among remote workers in markets where SWIFT delays are most painful
+
+**Metrics we care about:**
+- Total Value Locked (TVL) in active vaults
+- Number of active worker streams
+- Total USDT0 streamed and withdrawn
+- Employer retention (recurring deposits)
+
+**Conflux ecosystem fit:**
+SeamPay is a primitive that other Conflux applications can build on. Any protocol that needs programmable recurring payments, subscription billing, or vesting can plug into the same StreamVault contract. It brings real-world payroll volume and USDT0 usage to the Conflux eSpace ecosystem.
+
+## Conflux Integration
+
+- [x] **eSpace** - The entire protocol runs on Conflux eSpace. The StreamVault contract is deployed on eSpace testnet and takes advantage of EVM compatibility, 3-second finality, and near-zero gas fees that make per-second micro-settlements economically viable.
+- [ ] **Core Space** - Not used in this version
+- [ ] **Cross-Space Bridge** - Not used in this version
+- [ ] **Gas Sponsorship** - Planned for future version to sponsor worker withdrawal transactions
+- [ ] **Built-in Contracts** - Not used in this version
+- [ ] **Tree-Graph Consensus** - The fast finality of Tree-Graph is what makes streaming payroll practical at any salary level
 
 ### Partner Integrations
 
-- [ ] **Privy** - [Account abstraction features used]
-- [ ] **Pyth Network** - [Oracle data integration]
-- [ ] **LayerZero** - [Cross-chain functionality]
-- [ ] **Other** - [Additional integrations]
+- [ ] **Privy** - Planned for future version for embedded wallet onboarding for non-crypto workers
+- [ ] **Pyth Network** - Not used in this version
+- [x] **LayerZero** - USDT0, the token used for all payroll streams, is bridged to Conflux eSpace via LayerZero's Omnichain Fungible Token standard and backed 1:1 by USDT on Ethereum
+- [ ] **Other** - OpenZeppelin contracts for ReentrancyGuard and SafeERC20
 
-## ✨ Features
+## Features
 
 ### Core Features
-- **Feature 1** - Brief description
-- **Feature 2** - Brief description
-- **Feature 3** - Brief description
+- **Per-second payroll streaming** - Workers accrue USDT0 every second based on a wei-per-second rate set by the employer
+- **Non-custodial vault** - Funds are held in a permissionless smart contract, not a company wallet
+- **Anytime withdrawal** - Workers pull earned funds whenever they want, no approval needed
+- **Stream management** - Employers can start, update, or stop streams; accrued earnings are always preserved
+- **Runway visibility** - Employers see exactly how many days of payroll remain at the current burn rate
+- **Reclaim unstreamed funds** - Employers can withdraw vault funds not yet allocated to any worker
 
 ### Advanced Features
-- **Advanced Feature 1** - Brief description
-- **Advanced Feature 2** - Brief description
+- **Credit snapshotting** - When a stream rate is changed or stopped, earnings under the old rate are snapshotted so workers never lose accrued funds
+- **Auto tab selection** - The UI detects whether the connected wallet is the vault owner and defaults to the correct tab automatically
+- **Read-only public RPC** - Vault stats load on the landing page and app even before a wallet is connected, using Conflux's public RPC
 
 ### Future Features (Roadmap)
-- **Planned Feature 1** - Brief description
-- **Planned Feature 2** - Brief description
+- **Gas sponsorship for workers** - Sponsor withdrawal gas so workers with zero CFX can still withdraw
+- **Multi-vault support** - Allow one employer to manage multiple vaults for different teams or projects
+- **Privy embedded wallets** - Onboard workers who have never used a crypto wallet before
+- **CSV bulk stream setup** - Set up streams for dozens of workers from a single file upload
+- **Mobile app** - Native iOS and Android app for workers to monitor and withdraw earnings
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Frontend
-- **Framework**: [React / Next.js / Vue.js / etc.]
-- **Styling**: [Tailwind CSS / Styled Components / etc.]
-- **State Management**: [Redux / Zustand / Context API / etc.]
-- **Web3 Integration**: [ethers.js / web3.js / wagmi / etc.]
+- **Framework**: React 18
+- **Build tool**: Vite
+- **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
+- **Web3 Integration**: ethers.js v6
 
 ### Backend
-- **Runtime**: [Node.js / Python / Go / etc.]
-- **Framework**: [Express / FastAPI / Gin / etc.]
-- **Database**: [PostgreSQL / MongoDB / Redis / etc.]
-- **APIs**: [REST / GraphQL / WebSocket / etc.]
+- No dedicated backend. All state lives on-chain. The frontend reads directly from the Conflux eSpace public RPC using a read-only provider, so the app works without a wallet connected.
 
 ### Blockchain
-- **Network**: [Conflux Core Space / eSpace / Both]
-- **Smart Contracts**: [Solidity / Vyper]
-- **Development**: [Hardhat / Foundry / Truffle]
-- **Testing**: [Mocha / Jest / Foundry Tests]
+- **Network**: Conflux eSpace (testnet chainId 71, mainnet chainId 1030)
+- **Smart Contracts**: Solidity 0.8.24
+- **Development**: Hardhat
+- **Testing**: Hardhat + Mocha
+- **Libraries**: OpenZeppelin (ReentrancyGuard, SafeERC20, IERC20)
 
 ### Infrastructure
-- **Hosting**: [Vercel / Netlify / AWS / etc.]
-- **Storage**: [IPFS / Arweave / AWS S3 / etc.]
-- **Monitoring**: [Sentry / LogRocket / etc.]
+- **Hosting**: Vercel
+- **Storage**: On-chain only, no IPFS or external storage
 
-## 🏗️ Architecture
+## Architecture
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Frontend      │    │   Backend       │    │   Blockchain    │
-│   (React)       │◄──►│   (Node.js)     │◄──►│   (Conflux)     │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         ▼                       ▼                       ▼
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   User Interface│    │   API Layer     │    │ Smart Contracts │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
++------------------+        +----------------------+
+|  SeamPay UI      |        |  Conflux eSpace      |
+|  (React + Vite)  +------->+  StreamVault.sol     |
+|                  |        |  MockUSDT0.sol        |
+|  useWallet.js    |        +----------+-----------+
+|  useVault.js     |                   |
++------------------+        +----------+-----------+
+         |                  |  USDT0 (LayerZero)   |
+         |                  |  backed 1:1 by USDT  |
+         |                  |  on Ethereum         |
+         v                  +----------------------+
+  MetaMask / browser
+  wallet (ethers.js v6)
 ```
 
-**High-level architecture description:**
-Explain how the different components interact and the data flow through your system.
+The frontend connects directly to the Conflux eSpace RPC. There is no backend server or database. All payroll state (vault balance, stream rates, accrued amounts, worker list) is read directly from the smart contract. Write operations (deposit, setStream, withdraw) are signed by the user's wallet and submitted as on-chain transactions.
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
 - **Node.js** (v18.0.0 or higher)
-- **npm** or **yarn**
+- **yarn** or **npm**
 - **Git**
-- **Conflux Wallet** ([Fluent Wallet](https://fluentwallet.com/) or [MetaMask](https://metamask.io/) for eSpace)
+- **MetaMask** configured for Conflux eSpace testnet
 
-### Development Tools (Optional)
-- **Hardhat** - For smart contract development
-- **Foundry** - Alternative smart contract framework
-- **Docker** - For containerized development
+## Installation and Setup
 
-## 🚀 Installation & Setup
-
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/your-project-name.git
-cd your-project-name
+git clone https://github.com/your-username/seampay.git
+cd seampay
 ```
 
-### 2. Install Dependencies
+### 2. Install dependencies
 
 ```bash
-# Install frontend dependencies
-npm install
+# Contract and script deps
+cd remitstream
+yarn install
 
-# Install backend dependencies (if separate)
-cd backend
-npm install
-cd ..
-
-# Install smart contract dependencies (if applicable)
-cd contracts
-npm install
-cd ..
+# Frontend deps
+cd frontend
+yarn install
 ```
 
-### 3. Environment Configuration
-
-Create environment files:
+### 3. Configure environment
 
 ```bash
-# Frontend environment
-cp .env.example .env.local
+# Root -- for deploying contracts
+cp .env.example .env
+# Fill in: PRIVATE_KEY
 
-# Backend environment (if applicable)
-cp backend/.env.example backend/.env
+# Frontend -- after deploying
+cp frontend/.env.example frontend/.env
+# Fill in: VITE_VAULT_ADDRESS, VITE_USDT0_ADDRESS
 ```
-
-Edit the environment files with your configuration:
 
 ```env
-# .env.local
-NEXT_PUBLIC_CONFLUX_NETWORK=testnet
-NEXT_PUBLIC_RPC_URL=https://evmtestnet.confluxrpc.com
-NEXT_PUBLIC_CONTRACT_ADDRESS=0x...
-NEXT_PUBLIC_PRIVY_APP_ID=your_privy_app_id
+# frontend/.env
+VITE_VAULT_ADDRESS=0x43Bf701B987f0FaC72F0a88a7d30fDa12E449636
+VITE_USDT0_ADDRESS=0x478F70645367DbEc0B8Dc6e88921B9c602cFf351
+VITE_CHAIN_ID=71
 ```
 
-### 4. Smart Contract Deployment (if applicable)
+### 4. Deploy contracts
 
 ```bash
-# Compile contracts
-cd contracts
-npx hardhat compile
+cd remitstream
 
-# Deploy to testnet
+# Testnet
 npx hardhat run scripts/deploy.js --network confluxTestnet
 
-# Verify contracts (optional)
-npx hardhat verify --network confluxTestnet DEPLOYED_CONTRACT_ADDRESS
+# Mainnet
+npx hardhat run scripts/deploy.js --network confluxMainnet
 ```
 
-### 5. Start Development Servers
+### 5. Start the frontend
 
 ```bash
-# Start frontend
-npm run dev
-
-# Start backend (if separate, in another terminal)
-cd backend
-npm run dev
+cd frontend
+yarn dev
 ```
 
-Your application should now be running at `http://localhost:3000`
+Open [http://localhost:5173](http://localhost:5173).
 
-## 🧪 Testing
-
-### Run Tests
+## Testing
 
 ```bash
-# Run all tests
-npm test
+cd remitstream
 
-# Run frontend tests
-npm run test:frontend
-
-# Run backend tests
-npm run test:backend
-
-# Run smart contract tests
-cd contracts
+# Run all contract tests
 npx hardhat test
+
+# With gas report
+REPORT_GAS=true npx hardhat test
 ```
 
-### Test Coverage
+## Usage
 
-```bash
-# Generate coverage report
-npm run test:coverage
-```
+### Employer workflow
 
-## 📱 Usage
+1. Connect MetaMask on Conflux eSpace testnet
+2. The app detects you are the vault owner and opens the Employer tab
+3. Enter an amount and click **Approve + Deposit** to fund the vault
+4. Paste a worker's wallet address, enter a weekly salary in USDT0, and click **Set stream**
+5. Monitor vault balance, daily burn, and runway on the stats cards
+6. Stop any stream or reclaim unstreamed funds at any time
 
-### Getting Started
+### Worker workflow
 
-1. **Connect Wallet**
-   - Open the application in your browser
-   - Click "Connect Wallet" button
-   - Select your preferred wallet (Fluent/MetaMask)
-   - Approve the connection
+1. Connect MetaMask on Conflux eSpace testnet
+2. The app detects you are not the vault owner and opens the Worker tab
+3. Your accrued USDT0 balance is shown on the hero card, updated every 10 seconds from the chain
+4. Click **Withdraw** to send your entire accrued balance to your wallet, or enter a custom amount
 
-2. **[Feature 1 Usage]**
-   - Step-by-step instructions
-   - Include screenshots if helpful
-   - Mention any prerequisites
-
-3. **[Feature 2 Usage]**
-   - Step-by-step instructions
-   - Include screenshots if helpful
-
-### Example Workflows
-
-#### Workflow 1: [Name]
-```
-1. Connect your wallet
-2. Navigate to [section]
-3. Click [button]
-4. Confirm transaction
-5. View results
-```
-
-#### Workflow 2: [Name]
-```
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
-```
-
-## 🎬 Demo
+## Demo
 
 ### Live Demo
-- **URL**: [https://your-demo-link.com](https://your-demo-link.com)
-- **Test Account**: [If applicable, provide test credentials]
+- **URL**: [https://your-vercel-link.vercel.app](https://your-vercel-link.vercel.app)
 
 ### Demo Video
 - **YouTube**: [https://youtube.com/watch?v=your-video](https://youtube.com/watch?v=your-video)
-- **Duration**: [X minutes]
 
-### Screenshots
-
-#### Main Interface
-![Main Interface](./demo/screenshots/main-interface.png)
-
-#### Feature 1
-![Feature 1](./demo/screenshots/feature-1.png)
-
-#### Feature 2
-![Feature 2](./demo/screenshots/feature-2.png)
-
-## 📄 Smart Contracts
+## Smart Contracts
 
 ### Deployed Contracts
 
-#### Testnet
+#### Conflux eSpace Testnet (chainId 71)
+
 | Contract | Address | Explorer |
 |----------|---------|----------|
-| MainContract | `0x123...` | [View on ConfluxScan](https://testnet.confluxscan.io/address/0x123...) |
-| TokenContract | `0x456...` | [View on ConfluxScan](https://testnet.confluxscan.io/address/0x456...) |
+| StreamVault | `0x43Bf701B987f0FaC72F0a88a7d30fDa12E449636` | [View on ConfluxScan](https://evmtestnet.confluxscan.io/address/0x43Bf701B987f0FaC72F0a88a7d30fDa12E449636) |
+| MockUSDT0 | `0x478F70645367DbEc0B8Dc6e88921B9c602cFf351` | [View on ConfluxScan](https://evmtestnet.confluxscan.io/address/0x478F70645367DbEc0B8Dc6e88921B9c602cFf351) |
 
-#### Mainnet (if deployed)
-| Contract | Address | Explorer |
-|----------|---------|----------|
-| MainContract | `0x789...` | [View on ConfluxScan](https://confluxscan.io/address/0x789...) |
+### Contract Interface
 
-### Contract Interfaces
-
-#### MainContract
 ```solidity
-interface IMainContract {
-    function primaryFunction(uint256 param) external returns (bool);
-    function viewFunction() external view returns (uint256);
-    event ImportantEvent(address indexed user, uint256 value);
+interface IStreamVault {
+    function deposit(uint256 amount) external;
+    function setStream(address worker, uint256 ratePerSecond) external;
+    function stopStream(address worker) external;
+    function reclaimUnstreamed(uint256 amount) external;
+    function withdraw(uint256 amount) external;
+    function accrued(address worker) external view returns (uint256);
+    function vaultBalance() external view returns (uint256);
+    function runwayDays() external view returns (uint256);
+    function getWorkers() external view returns (address[] memory);
+    function streams(address) external view returns (
+        uint256 ratePerSecond,
+        uint256 startTime,
+        uint256 credit,
+        uint256 withdrawn,
+        bool exists
+    );
 }
 ```
 
-## 🔧 API Documentation
+### Accounting model
 
-### REST Endpoints
-
-#### Authentication
 ```
-POST /api/auth/login
-POST /api/auth/logout
-GET  /api/auth/profile
+accrued = credit + (ratePerSecond x elapsed) - withdrawn
 ```
 
-#### Core Features
-```
-GET    /api/data
-POST   /api/data
-PUT    /api/data/:id
-DELETE /api/data/:id
-```
+`credit` snapshots a worker's earnings whenever their stream is updated or stopped. This ensures workers never lose accrued funds when an employer changes a rate or pauses a stream.
 
-### WebSocket Events
+## Security
 
-```javascript
-// Connect to WebSocket
-const ws = new WebSocket('ws://localhost:3001');
+- **ReentrancyGuard** on all functions that transfer tokens
+- **SafeERC20** for all token transfers to handle non-standard ERC20 behaviour
+- **onlyOwner** modifier on all employer actions
+- **Accrual cap** to vault balance so the contract never reports more owed than exists
+- The contract has no upgradeability, no proxy, and no admin backdoor. What is deployed is what runs.
 
-// Listen for events
-ws.on('update', (data) => {
-    console.log('Received update:', data);
-});
-```
+### Known limitations
+- Single owner model: only one employer address can manage the vault. Multi-sig or DAO-controlled vaults are a future improvement.
+- No on-chain worker registry beyond the address list. Worker metadata (name, role) is managed off-chain.
+- Contract has not been formally audited. Use on testnet or with small amounts.
 
-## 🔒 Security
+## Roadmap
 
-### Security Measures
-- **Smart Contract Auditing**: [Describe audit status]
-- **Input Validation**: All user inputs are validated
-- **Access Control**: Role-based permissions implemented
-- **Rate Limiting**: API endpoints are rate-limited
-
-### Known Security Considerations
-- [List any known security considerations]
-- [Mention any limitations or assumptions]
-
-## 🚧 Known Issues & Limitations
-
-### Current Limitations
-- **Limitation 1**: Description and potential workaround
-- **Limitation 2**: Description and potential workaround
-
-### Known Issues
-- **Issue 1**: Description and status
-- **Issue 2**: Description and status
-
-### Future Improvements
-- **Improvement 1**: Description and timeline
-- **Improvement 2**: Description and timeline
-
-## 🗺️ Roadmap
-
-### Phase 1 (Hackathon) ✅
-- [x] Core functionality implementation
-- [x] Basic UI/UX
-- [x] Smart contract deployment
-- [x] Demo preparation
+### Phase 1 (Hackathon) - Done
+- [x] StreamVault smart contract
+- [x] MockUSDT0 for testnet
+- [x] Hardhat deploy scripts and tests
+- [x] SeamPay frontend with landing page and app
+- [x] Employer tab: deposit, set stream, stop stream, reclaim
+- [x] Worker tab: view accrued balance, withdraw
+- [x] Testnet deployment
 
 ### Phase 2 (Post-Hackathon)
-- [ ] Enhanced user interface
-- [ ] Additional features
-- [ ] Security audit
-- [ ] Mainnet deployment
+- [ ] Gas sponsorship for worker withdrawals
+- [ ] Privy embedded wallets for non-crypto workers
+- [ ] Formal security audit
+- [ ] Mainnet deployment with real USDT0
+- [ ] Multi-vault support
 
 ### Phase 3 (Future)
-- [ ] Mobile application
-- [ ] Advanced analytics
-- [ ] Third-party integrations
-- [ ] Scaling optimizations
+- [ ] Mobile app for workers
+- [ ] CSV bulk stream setup for employers
+- [ ] Analytics dashboard (TVL, streams, volume)
+- [ ] SDK for other Conflux protocols to integrate streaming payments
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-### Development Process
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Code Style
-- Follow established conventions
-- Write meaningful commit messages
-
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-### Conflux Hackathon
-- **Conflux Network** - For hosting the hackathon and providing the platform
-- **Conflux Team** - For technical support and mentorship
-- **Community** - For feedback and encouragement
+- **Conflux Network** - For hosting the hackathon and providing fast, cheap EVM infrastructure
+- **LayerZero + Tether** - For USDT0, which makes credible dollar payroll on Conflux possible
+- **OpenZeppelin** - For battle-tested smart contract primitives
 
-### Third-Party Libraries
-- **[Library 1]** - [Purpose and link]
-- **[Library 2]** - [Purpose and link]
-
-## 📞 Contact & Support
-
-### Team Contact
-- **Discord**: [Team Discord handles]
-- **GitHub**: [Team Lead Profile](https://github.com/username)
+## Contact and Support
 
 ### Project Links
-- **GitHub**: [https://github.com/your-username/your-project](https://github.com/your-username/your-project)
-- **Demo**: [https://your-demo-link.com](https://your-demo-link.com)
-- **Documentation**: [https://docs.your-project.com](https://docs.your-project.com)
-
-### Support
-- **Issues**: [GitHub Issues](https://github.com/your-username/your-project/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/your-project/discussions)
+- **GitHub**: [https://github.com/your-username/seampay](https://github.com/your-username/seampay)
+- **Demo**: [https://your-vercel-link.vercel.app](https://your-vercel-link.vercel.app)
+- **Announcement tweet**: [https://x.com/0xbl4ze/status/2046416961001898469](https://x.com/0xbl4ze/status/2046416961001898469)
+- **Electric Capital open-dev-data PR**: [https://github.com/electric-capital/open-dev-data/pull/2856](https://github.com/electric-capital/open-dev-data/pull/2854)
 
 ---
 
-**Built with ❤️ for Global Hackfest 2026**
-
-*Thank you for checking out our project! We hope it contributes to the growth and innovation of the Conflux ecosystem.* 
+**Built for Global Hackfest 2026**
