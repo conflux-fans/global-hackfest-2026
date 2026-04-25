@@ -1,0 +1,23 @@
+{
+  "name": "conflux-milestone-agent",
+  "version": "1.0.0",
+  "description": "AI agent for monitoring Conflux milestone escrow contracts",
+  "main": "MilestoneMonitorAgent.js",
+  "scripts": {
+    "start": "node MilestoneMonitorAgent.js",
+    "test": "node test-agent.js"
+  },
+  "keywords": [
+    "ai-agent",
+    "conflux",
+    "milestone",
+    "escrow"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "js-conflux-sdk": "^2.5.0",
+    "dotenv": "^16.3.1",
+    "openai": "^4.20.0"
+  }
+}

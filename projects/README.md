@@ -1,459 +1,307 @@
-# [Your Project Name]
+# AIMilestone — Conflux Gas-Sponsored Milestone Escrow AI Agent 🚀
 
-One-line description of what it does.
+**Conflux Global Hackfest 2026 Entry**
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Conflux](https://img.shields.io/badge/built%20on-Conflux-blue)](https://confluxnetwork.org)
-[![Hackathon](https://img.shields.io/badge/Global%20Hackfest%202026-green)](https://github.com/conflux-fans/global-hackfest-2026)
+A revolutionary milestone-based escrow system combining AI-powered monitoring with Conflux's zero-gas transaction capabilities. Perfect for decentralized project funding with human oversight.
 
-## Overview
+## 🌟 Key Features
 
-Short description: what problem it solves and how. What’s different about it and how you use Conflux.
+- **⚡ Zero Gas Experience**: Leverages Conflux CIP-30 Gas Sponsorship for cost-free transactions
+- **🤖 AI-Powered Monitoring**: Intelligent agent analyzes progress and recommends releases
+- **👥 Human-in-the-Loop**: Final approval required from clients for security
+- **💰 USDT0 Integration**: Stablecoin-based payments for predictable value
+- **🔒 Secure Smart Contracts**: Built on OpenZeppelin with comprehensive testing
+- **📊 Real-Time Tracking**: Monitor milestones, payments, and project progress
 
-## 🏆 Hackathon Information
+## 🏆 Why This Wins
 
-- **Event**: Global Hackfest 2026
-- **Focus Area**: [Open Innovation - Build anything you want using Conflux features]
-- **Team**: [Team Name]
-- **Submission Date**: 2026-04-20 @ 11:59:59
+1. **Solves Real Pain Points**: Eliminates gas cost barriers while maintaining security
+2. **Innovative Tech Stack**: First AI + Gas Sponsorship combination on Conflux
+3. **Complete Demo**: Working MVP with chat interface and blockchain integration
+4. **Production Ready**: Tested contracts, clear documentation, easy deployment
+5. **Market Potential**: Huge demand for trustless freelance/funding platforms
 
-## 👥 Team
+## 🎯 Demo Video Highlights
 
-| Name | Role | GitHub | Discord |
-|------|------|--------|---------|
-| [Name 1] | [Role] | [@username](https://github.com/username) | username#1234 |
-| [Name 2] | [Role] | [@username](https://github.com/username) | username#1234 |
-| [Name 3] | [Role] | [@username](https://github.com/username) | username#1234 |
-| [Name 4] | [Role] | [@username](https://github.com/username) | username#1234 |
-| [Name 5] | [Role] | [@username](https://github.com/username) | username#1234 |
+Our 3-minute demo showcases:
 
-## 🚀 Problem Statement
-
-**What problem does your project solve?**
-
-Describe the specific problem or challenge you're addressing. Include:
-- Why this problem matters
-- Who is affected by this problem
-- Current limitations or gaps in existing solutions
-- How blockchain technology can help solve this problem
-
-## 💡 Solution
-
-**How does your project address the problem?**
-
-Explain your approach and solution:
-- High-level overview of your solution
-- Key features and functionality
-- How it improves upon existing solutions
-- Benefits for users and the ecosystem
-
-## Go-to-Market Plan (required)
-
-- Who’s it for and why would they use it?
-- How will you get users or developers to it?
-- Milestones or metrics you care about (e.g. adoption, TVL, usage)
-- How it fits Conflux and the wider ecosystem
-
-## ⚡ Conflux Integration
-
-**How does your project leverage Conflux features?**
-
-Check all that apply and provide details:
-
-- [ ] **Core Space** - [Describe how you use Core Space]
-- [ ] **eSpace** - [Describe how you use eSpace]
-- [ ] **Cross-Space Bridge** - [Describe cross-space functionality]
-- [ ] **Gas Sponsorship** - [Describe sponsored transactions]
-- [ ] **Built-in Contracts** - [Which contracts and how]
-- [ ] **Tree-Graph Consensus** - [How you leverage unique consensus]
-
-### Partner Integrations
-
-- [ ] **Privy** - [Account abstraction features used]
-- [ ] **Pyth Network** - [Oracle data integration]
-- [ ] **LayerZero** - [Cross-chain functionality]
-- [ ] **Other** - [Additional integrations]
-
-## ✨ Features
-
-### Core Features
-- **Feature 1** - Brief description
-- **Feature 2** - Brief description
-- **Feature 3** - Brief description
-
-### Advanced Features
-- **Advanced Feature 1** - Brief description
-- **Advanced Feature 2** - Brief description
-
-### Future Features (Roadmap)
-- **Planned Feature 1** - Brief description
-- **Planned Feature 2** - Brief description
-
-## 🛠️ Technology Stack
-
-### Frontend
-- **Framework**: [React / Next.js / Vue.js / etc.]
-- **Styling**: [Tailwind CSS / Styled Components / etc.]
-- **State Management**: [Redux / Zustand / Context API / etc.]
-- **Web3 Integration**: [ethers.js / web3.js / wagmi / etc.]
-
-### Backend
-- **Runtime**: [Node.js / Python / Go / etc.]
-- **Framework**: [Express / FastAPI / Gin / etc.]
-- **Database**: [PostgreSQL / MongoDB / Redis / etc.]
-- **APIs**: [REST / GraphQL / WebSocket / etc.]
-
-### Blockchain
-- **Network**: [Conflux Core Space / eSpace / Both]
-- **Smart Contracts**: [Solidity / Vyper]
-- **Development**: [Hardhat / Foundry / Truffle]
-- **Testing**: [Mocha / Jest / Foundry Tests]
-
-### Infrastructure
-- **Hosting**: [Vercel / Netlify / AWS / etc.]
-- **Storage**: [IPFS / Arweave / AWS S3 / etc.]
-- **Monitoring**: [Sentry / LogRocket / etc.]
+1. **Smart Contract Deployment** - See the contract live on ConfluxScan
+2. **USDT0 Deposit** - Client funds the escrow with stablecoins
+3. **Milestone Creation** - Set up project milestones with amounts and deadlines
+4. **AI Chat Interface** - Interact with the AI agent naturally
+5. **Proof Submission** - Submit GitHub PR links or text descriptions
+6. **AI Analysis** - Watch AI analyze and recommend releases
+7. **Human Approval** - Client confirms AI recommendations
+8. **Zero-Gas Release** - See USDT0 transferred with 0 gas cost!
+9. **ConfluxScan Verification** - Verify all transactions on block explorer
 
 ## 🏗️ Architecture
 
 ```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Frontend      │    │   Backend       │    │   Blockchain    │
-│   (React)       │◄──►│   (Node.js)     │◄──►│   (Conflux)     │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         ▼                       ▼                       ▼
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   User Interface│    │   API Layer     │    │ Smart Contracts │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
+┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
+│   Client        │    │   AI Agent       │    │   Developer     │
+│  (Approver)     │    │  (Eliza-based)   │    │  (Beneficiary)  │
+└────────┬────────┘    └────────┬─────────┘    └────────┬────────┘
+         │                      │                       │
+         │ 1. Deposit USDT0     │ 4. Analyze Proof      │ 3. Submit Proof
+         │ 2. Create Milestones │ 5. Recommend Release  │
+         │ 6. Approve Release   │                       │
+         │ 7. Confirm Release   │                       │
+         └──────────┬───────────┴───────────┬───────────┘
+                    │                       │
+         ┌──────────▼───────────────────────▼──────────┐
+         │     Conflux eSpace Smart Contract             │
+         │  - MilestoneEscrow.sol                       │
+         │  - USDT0 Management                          │
+         │  - Gas Sponsorship (CIP-30)                  │
+         └──────────┬───────────────────────────────────┘
+                    │
+         ┌──────────▼──────────┐
+         │  Conflux Blockchain  │
+         │  - eSpace Testnet   │
+         │  - Zero Gas Fees    │
+         └─────────────────────┘
 ```
 
-**High-level architecture description:**
-Explain how the different components interact and the data flow through your system.
+## 🚀 Quick Start
 
-## 📋 Prerequisites
+### Prerequisites
 
-Before you begin, ensure you have the following installed:
+- Node.js 16+
+- npm or yarn
+- Conflux eSpace testnet account with CFX
+- USDT0 tokens (testnet)
 
-- **Node.js** (v18.0.0 or higher)
-- **npm** or **yarn**
-- **Git**
-- **Conflux Wallet** ([Fluent Wallet](https://fluentwallet.com/) or [MetaMask](https://metamask.io/) for eSpace)
-
-### Development Tools (Optional)
-- **Hardhat** - For smart contract development
-- **Foundry** - Alternative smart contract framework
-- **Docker** - For containerized development
-
-## 🚀 Installation & Setup
-
-### 1. Clone the Repository
+### Installation
 
 ```bash
-git clone https://github.com/your-username/your-project-name.git
-cd your-project-name
+# Clone repository
+git clone https://github.com/yourusername/conflux-milestone-escrow.git
+cd conflux-milestone-escrow
+
+# Install dependencies
+npm install
+
+# Copy environment variables
+cp .env.example .env
+
+# Edit .env with your private key and contract address
 ```
 
-### 2. Install Dependencies
+### Deployment
 
 ```bash
-# Install frontend dependencies
-npm install
+# Deploy to Conflux eSpace testnet
+npm run deploy
 
-# Install backend dependencies (if separate)
-cd backend
-npm install
-cd ..
+# Setup gas sponsorship
+npm run setup-sponsorship
 
-# Install smart contract dependencies (if applicable)
-cd contracts
-npm install
-cd ..
+# Run demo flow
+npm run demo
 ```
 
-### 3. Environment Configuration
-
-Create environment files:
+### AI Agent
 
 ```bash
-# Frontend environment
-cp .env.example .env.local
+cd agents
+npm install
 
-# Backend environment (if applicable)
-cp backend/.env.example backend/.env
+# Start the AI agent chat interface
+npm start
 ```
 
-Edit the environment files with your configuration:
+## 📝 Usage Examples
+
+### Smart Contract Interactions
+
+```javascript
+// Deposit USDT0
+await milestoneEscrow.deposit(ethers.parseEther("1000"));
+
+// Create milestone
+await milestoneEscrow.createMilestone(
+  ethers.parseEther("300"),
+  Math.floor(Date.now() / 1000) + 7 * 24 * 60 * 60,
+  "Complete project architecture"
+);
+
+// AI agent recommends release
+await milestoneEscrow.submitAIRecommendation(1, "GitHub shows completion...");
+
+// Approver confirms
+await milestoneEscrow.approveMilestone(1);
+
+// Release funds (zero gas!)
+await milestoneEscrow.releaseMilestone(1);
+```
+
+### AI Agent Chat
+
+```
+You: I've completed milestone 1, here's the proof: https://github.com/user/repo/pull/123
+
+🤖 Agent: 🔍 Analyzing proof...
+🎯 Analysis Result:
+✅ GitHub link detected and completion confirmed.
+✅ Quality indicators present (testing, review, etc.).
+
+💡 Recommendation: Based on the proof provided, I recommend proceeding with milestone 1.
+
+You: approve 1
+
+✅ Agent: ✅ Milestone 1 approved successfully!
+⚡ Gas sponsored - zero cost transaction!
+
+You: release 1
+
+✅ Agent: ✅ Funds released successfully!
+💰 USDT0 has been transferred to the beneficiary's wallet!
+```
+
+## 🔧 Configuration
+
+### Environment Variables (.env)
 
 ```env
-# .env.local
-NEXT_PUBLIC_CONFLUX_NETWORK=testnet
-NEXT_PUBLIC_RPC_URL=https://evmtestnet.confluxrpc.com
-NEXT_PUBLIC_CONTRACT_ADDRESS=0x...
-NEXT_PUBLIC_PRIVY_APP_ID=your_privy_app_id
+# Conflux eSpace Configuration
+PRIVATE_KEY=your_private_key_here
+CONFLUX_URL=https://evmtestnet.confluxrpc.com
+CHAIN_ID=71
+
+# Contract Configuration
+USDT0_ADDRESS=0x0000000000000000000000000000000000000000
+CONTRACT_ADDRESS=your_deployed_contract_address
+
+# AI Configuration
+OPENAI_API_KEY=your_openai_api_key
 ```
 
-### 4. Smart Contract Deployment (if applicable)
+### Agent Configuration (agents/config/agent.config.js)
 
-```bash
-# Compile contracts
-cd contracts
-npx hardhat compile
-
-# Deploy to testnet
-npx hardhat run scripts/deploy.js --network confluxTestnet
-
-# Verify contracts (optional)
-npx hardhat verify --network confluxTestnet DEPLOYED_CONTRACT_ADDRESS
+```javascript
+module.exports = {
+  conflux: {
+    url: "https://evmtestnet.confluxrpc.com",
+    chainId: 71,
+    privateKey: process.env.PRIVATE_KEY,
+    contractAddress: process.env.CONTRACT_ADDRESS
+  },
+  ai: {
+    apiKey: process.env.OPENAI_API_KEY,
+    model: "gpt-4",
+    temperature: 0.7
+  }
+};
 ```
-
-### 5. Start Development Servers
-
-```bash
-# Start frontend
-npm run dev
-
-# Start backend (if separate, in another terminal)
-cd backend
-npm run dev
-```
-
-Your application should now be running at `http://localhost:3000`
 
 ## 🧪 Testing
-
-### Run Tests
 
 ```bash
 # Run all tests
 npm test
 
-# Run frontend tests
-npm run test:frontend
+# Run specific test file
+npx hardhat test test/MilestoneEscrow.test.js
 
-# Run backend tests
-npm run test:backend
-
-# Run smart contract tests
-cd contracts
-npx hardhat test
+# Run tests with coverage
+npx hardhat coverage
 ```
 
-### Test Coverage
+## 📊 Contract Functions
 
-```bash
-# Generate coverage report
-npm run test:coverage
-```
+### Core Functions
 
-## 📱 Usage
+- `deposit(uint256 amount)` - Deposit USDT0 into escrow
+- `createMilestone(uint256 amount, uint256 deadline, string description)` - Create new milestone
+- `submitAIRecommendation(uint256 milestoneId, string reasoning)` - AI submits release recommendation
+- `approveMilestone(uint256 milestoneId)` - Approver confirms milestone (human-in-the-loop)
+- `releaseMilestone(uint256 milestoneId)` - Release funds (zero gas!)
 
-### Getting Started
+### View Functions
 
-1. **Connect Wallet**
-   - Open the application in your browser
-   - Click "Connect Wallet" button
-   - Select your preferred wallet (Fluent/MetaMask)
-   - Approve the connection
+- `getMilestone(uint256 milestoneId)` - Get milestone details
+- `getAllMilestones()` - Get all milestones
+- `getContractStatus()` - Get overall contract status
+- `getUSDT0Balance()` - Get contract USDT0 balance
 
-2. **[Feature 1 Usage]**
-   - Step-by-step instructions
-   - Include screenshots if helpful
-   - Mention any prerequisites
+## 🔒 Security Features
 
-3. **[Feature 2 Usage]**
-   - Step-by-step instructions
-   - Include screenshots if helpful
+- **OpenZeppelin Contracts**: Battle-tested security libraries
+- **Access Control**: Role-based permissions (owner, approver, AI agent)
+- **Reentrancy Protection**: Guards against reentrancy attacks
+- **Input Validation**: Comprehensive parameter checking
+- **Gas Sponsorship Control**: Sponsored addresses whitelisted
+- **Emergency Controls**: Owner can update critical addresses
 
-### Example Workflows
+## 🌐 Conflux Integration
 
-#### Workflow 1: [Name]
-```
-1. Connect your wallet
-2. Navigate to [section]
-3. Click [button]
-4. Confirm transaction
-5. View results
-```
+### Gas Sponsorship (CIP-30)
 
-#### Workflow 2: [Name]
-```
-1. [Step 1]
-2. [Step 2]
-3. [Step 3]
-```
+The contract uses Conflux's native gas sponsorship:
 
-## 🎬 Demo
-
-### Live Demo
-- **URL**: [https://your-demo-link.com](https://your-demo-link.com)
-- **Test Account**: [If applicable, provide test credentials]
-
-### Demo Video
-- **YouTube**: [https://youtube.com/watch?v=your-video](https://youtube.com/watch?v=your-video)
-- **Duration**: [X minutes]
-
-### Screenshots
-
-#### Main Interface
-![Main Interface](./demo/screenshots/main-interface.png)
-
-#### Feature 1
-![Feature 1](./demo/screenshots/feature-1.png)
-
-#### Feature 2
-![Feature 2](./demo/screenshots/feature-2.png)
-
-## 📄 Smart Contracts
-
-### Deployed Contracts
-
-#### Testnet
-| Contract | Address | Explorer |
-|----------|---------|----------|
-| MainContract | `0x123...` | [View on ConfluxScan](https://testnet.confluxscan.io/address/0x123...) |
-| TokenContract | `0x456...` | [View on ConfluxScan](https://testnet.confluxscan.io/address/0x456...) |
-
-#### Mainnet (if deployed)
-| Contract | Address | Explorer |
-|----------|---------|----------|
-| MainContract | `0x789...` | [View on ConfluxScan](https://confluxscan.io/address/0x789...) |
-
-### Contract Interfaces
-
-#### MainContract
 ```solidity
-interface IMainContract {
-    function primaryFunction(uint256 param) external returns (bool);
-    function viewFunction() external view returns (uint256);
-    event ImportantEvent(address indexed user, uint256 value);
-}
+ISponsorWhitelistControl public constant sponsorWhitelist =
+    ISponsorWhitelistControl(0x0888000000000000000000000000000000000001);
+
+// Automatically sponsors gas for approver and AI agent
+_enableGasSponsorship(approver);
+_enableGasSponsorship(aiAgent);
 ```
 
-## 🔧 API Documentation
+### Network Details
 
-### REST Endpoints
+- **Testnet**: Conflux eSpace Testnet (Chain ID: 71)
+- **Mainnet**: Conflux eSpace Mainnet (Chain ID: 1030)
+- **Explorer**: https://evmtestnet.confluxscan.io
+- **RPC**: https://evmtestnet.confluxrpc.com
 
-#### Authentication
-```
-POST /api/auth/login
-POST /api/auth/logout
-GET  /api/auth/profile
-```
+## 📈 Future Enhancements
 
-#### Core Features
-```
-GET    /api/data
-POST   /api/data
-PUT    /api/data/:id
-DELETE /api/data/:id
-```
-
-### WebSocket Events
-
-```javascript
-// Connect to WebSocket
-const ws = new WebSocket('ws://localhost:3001');
-
-// Listen for events
-ws.on('update', (data) => {
-    console.log('Received update:', data);
-});
-```
-
-## 🔒 Security
-
-### Security Measures
-- **Smart Contract Auditing**: [Describe audit status]
-- **Input Validation**: All user inputs are validated
-- **Access Control**: Role-based permissions implemented
-- **Rate Limiting**: API endpoints are rate-limited
-
-### Known Security Considerations
-- [List any known security considerations]
-- [Mention any limitations or assumptions]
-
-## 🚧 Known Issues & Limitations
-
-### Current Limitations
-- **Limitation 1**: Description and potential workaround
-- **Limitation 2**: Description and potential workaround
-
-### Known Issues
-- **Issue 1**: Description and status
-- **Issue 2**: Description and status
-
-### Future Improvements
-- **Improvement 1**: Description and timeline
-- **Improvement 2**: Description and timeline
-
-## 🗺️ Roadmap
-
-### Phase 1 (Hackathon) ✅
-- [x] Core functionality implementation
-- [x] Basic UI/UX
-- [x] Smart contract deployment
-- [x] Demo preparation
-
-### Phase 2 (Post-Hackathon)
-- [ ] Enhanced user interface
-- [ ] Additional features
-- [ ] Security audit
-- [ ] Mainnet deployment
-
-### Phase 3 (Future)
-- [ ] Mobile application
-- [ ] Advanced analytics
-- [ ] Third-party integrations
-- [ ] Scaling optimizations
+- [ ] Multi-signature approval support
+- [ ] Dispute resolution mechanism
+- [ ] Advanced AI models with GitHub API integration
+- [ ] Mobile app interface
+- [ ] Multi-currency support
+- [ ] Reputation system for developers
+- [ ] Insurance integration
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
+We welcome contributions! Please follow these steps:
 
-### Development Process
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
+2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-### Code Style
-- Follow established conventions
-- Write meaningful commit messages
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 🙏 Acknowledgments
+## 👥 Team
 
-### Conflux Hackathon
-- **Conflux Network** - For hosting the hackathon and providing the platform
-- **Conflux Team** - For technical support and mentorship
-- **Community** - For feedback and encouragement
+- **Developed for**: Conflux Global Hackfest 2026
+- **Tech Stack**: Solidity, Hardhat, Node.js, Eliza Framework
+- **Special Thanks**: Conflux team for the amazing gas sponsorship feature
 
-### Third-Party Libraries
-- **[Library 1]** - [Purpose and link]
-- **[Library 2]** - [Purpose and link]
+## 🔗 Links
 
-## 📞 Contact & Support
+- **Conflux eSpace**: https://confluxnetwork.org/espace
+- **Gas Sponsorship Docs**: https://developer.confluxchain.org/espace/gas-sponsorship/overview
+- **Eliza Framework**: https://github.com/eliza-zone
+- **Demo Video**: https://youtu.be/k8lM-jEnzYQ
+- **Live Demo**: https://youtube.com/shorts/-gU9kmwV0lw?feature=share
 
-### Team Contact
-- **Discord**: [Team Discord handles]
-- **GitHub**: [Team Lead Profile](https://github.com/username)
+## 📞 Support
 
-### Project Links
-- **GitHub**: [https://github.com/your-username/your-project](https://github.com/your-username/your-project)
-- **Demo**: [https://your-demo-link.com](https://your-demo-link.com)
-- **Documentation**: [https://docs.your-project.com](https://docs.your-project.com)
-
-### Support
-- **Issues**: [GitHub Issues](https://github.com/your-username/your-project/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/your-username/your-project/discussions)
+For questions or support:
+- GitHub Issues: https://github.com/NathanWu77
+- Email: 13918713047@163.com
 
 ---
 
-**Built with ❤️ for Global Hackfest 2026**
+**Built with ❤️ for Conflux Global Hackfest 2026**
 
-*Thank you for checking out our project! We hope it contributes to the growth and innovation of the Conflux ecosystem.* 
+*Revolutionizing decentralized project funding with AI and zero-gas transactions*
