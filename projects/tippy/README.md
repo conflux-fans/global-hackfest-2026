@@ -25,6 +25,8 @@ Targeting: **Best AI + Conflux**, **Best Developer Tool**, **Best DeFi Project**
 escrow), **Best USDT0 Integration**, **Best AxCNH Integration**, and the **Privy** partner
 integration prize.
 
+**Winner demo (YouTube):** [https://youtu.be/dp_lun-oi2c](https://youtu.be/dp_lun-oi2c) - showcase video for Global Hackfest 2026.
+
 ## Two modes, one contract
 
 | Mode | Flow | Payout |

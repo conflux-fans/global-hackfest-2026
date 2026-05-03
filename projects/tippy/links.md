@@ -9,6 +9,7 @@ Fill these in before submitting the PR to `conflux-fans/global-hackfest-2026`.
 | Public GitHub repo | `https://github.com/xElvolution/tippy.fun` |
 | Live frontend (Vercel) | `https://tippy-fun.vercel.app` |
 | Demo video (3–5 min, YouTube unlisted recommended) | `https://youtu.be/wgjAIGD4dMY` (local fallback: [`./demo/demo-video.mp4`](./demo/demo-video.mp4) — ~187 MB, upload to YouTube before committing) |
+| Hackathon winner showcase video (was published after win) | `https://youtu.be/dp_lun-oi2c` |
 | Participant intro video (30–60 s) | `https://youtube.com/shorts/R0P2rQxx7j8` (local: [`./demo/participant-intro.mp4`](./demo/participant-intro.mp4) — ~8.7 MB, safe to commit) |
 | Project logo (1:1, ≥500×500 PNG) | `./demo/logo.png` |
 
